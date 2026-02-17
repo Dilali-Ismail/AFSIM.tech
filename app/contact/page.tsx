@@ -139,8 +139,8 @@ export default function Contact() {
                         {[
                             {
                                 question: 'How long does it take to build a website?',
-                                answer: 'Typically, a standard business website takes 2-4 weeks from start to finish. More complex projects with booking systems or custom features may take 4-6 weeks. We'll provide you with a detailed timeline during our initial consultation.',
-              },
+                                answer: 'Typically, a standard business website takes 2-4 weeks from start to finish. More complex projects with booking systems or custom features may take 4-6 weeks. We will provide you with a detailed timeline during our initial consultation.',
+                            },
                             {
                                 question: 'What is the process?',
                                 answer: '1. Free Consultation: We discuss your needs and goals\n2. Proposal & Quote: We send you a detailed proposal with pricing\n3. Design & Development: We build your website with regular updates\n4. Review & Revisions: You review and request any changes\n5. Launch & Support: We launch your site and provide ongoing support',
