@@ -2,77 +2,64 @@
 
 import React from 'react';
 
-export function RadialBackground() {
-    // Generate a few lines with slightly different timings
-    const lines = [
-        { d: "M-100,50 Q250,150 600,50 T1300,50", dur: "15s", begin: "0s", top: "10%" },
-        { d: "M-100,60 Q300,10 700,60 T1400,60", dur: "18s", begin: "-2s", top: "25%" },
-        { d: "M-100,50 Q350,100 800,50 T1500,50", dur: "20s", begin: "-5s", top: "40%" },
-        { d: "M-100,70 Q400,20 900,70 T1600,70", dur: "22s", begin: "-1s", top: "55%" },
-        { d: "M-100,40 Q450,120 1000,40 T1700,40", dur: "16s", begin: "-3s", top: "70%" },
-        { d: "M-100,80 Q500,30 1100,80 T1800,80", dur: "25s", begin: "-8s", top: "85%" },
-    ];
+// Bokeh particle positions (deterministic, no random for build stability)
+const bokehParticles = [
+    { x: 15, y: 20, size: 3, begin: '0s', duration: 8 },
+    { x: 75, y: 10, size: 2, begin: '-1.5s', duration: 10 },
+    { x: 40, y: 60, size: 4, begin: '-3s', duration: 12 },
+    { x: 85, y: 45, size: 2, begin: '-0.5s', duration: 9 },
+    { x: 25, y: 80, size: 3, begin: '-2s', duration: 11 },
+    { x: 60, y: 25, size: 2, begin: '-4s', duration: 7 },
+    { x: 90, y: 70, size: 3, begin: '-1s', duration: 13 },
+    { x: 10, y: 55, size: 2, begin: '-3.5s', duration: 8 },
+    { x: 50, y: 90, size: 4, begin: '-2.5s', duration: 10 },
+    { x: 70, y: 80, size: 2, begin: '-0.8s', duration: 9 },
+    { x: 30, y: 35, size: 3, begin: '-4.5s', duration: 11 },
+    { x: 55, y: 50, size: 2, begin: '-1.2s', duration: 8 },
+];
 
+export function RadialBackground() {
     return (
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
             {/* Base: very dark navy */}
             <div className="absolute inset-0" style={{ background: 'rgb(10, 15, 30)' }} />
 
-            {/* Subtle Ambient Glow */}
+            {/* Cinematic radial glow — brand blue center, breathing */}
             <div
-                className="absolute inset-0 opacity-20 bg-glow-breathe"
+                className="absolute inset-0 bg-glow-breathe"
                 style={{
-                    background: `radial-gradient(circle at 50% 50%, rgba(26, 123, 236, 0.15) 0%, transparent 80%)`,
+                    background: `radial-gradient(ellipse 70% 60% at 50% 50%, rgba(26, 123, 236, 0.45) 0%, rgba(26, 123, 236, 0.15) 35%, rgba(10, 15, 30, 0) 70%)`,
                 }}
             />
 
-            {/* Wavy Lines Pattern */}
-            <div className="absolute inset-0 opacity-10">
-                {lines.map((line, i) => (
-                    <svg
-                        key={i}
-                        className="absolute w-full h-32"
-                        style={{ top: line.top }}
-                        viewBox="0 0 1440 120"
-                        preserveAspectRatio="none"
-                    >
-                        <path
-                            d={line.d}
-                            fill="none"
-                            stroke="rgba(26, 123, 236, 0.6)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                        >
-                            <animate
-                                attributeName="d"
-                                dur={line.dur}
-                                begin={line.begin}
-                                repeatCount="indefinite"
-                                values={`
-                                    ${line.d};
-                                    M-100,80 Q400,-20 900,80 T1900,80;
-                                    ${line.d}
-                                `}
-                            />
-                        </path>
-                    </svg>
-                ))}
-            </div>
-
-            {/* Secondary diagonal grid / texture for depth (Optional but fits "lines" theme) */}
+            {/* Secondary depth glow — slightly offset for cinematic depth */}
             <div
-                className="absolute inset-0 opacity-[0.03]"
+                className="absolute inset-0"
                 style={{
-                    backgroundImage: `linear-gradient(rgba(26, 123, 236, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 123, 236, 0.2) 1px, transparent 1px)`,
-                    backgroundSize: '40px 40px'
+                    background: `radial-gradient(ellipse 40% 40% at 30% 70%, rgba(26, 80, 200, 0.18) 0%, transparent 60%),
+                                 radial-gradient(ellipse 30% 30% at 75% 20%, rgba(26, 123, 236, 0.12) 0%, transparent 60%)`,
                 }}
             />
 
             {/* Film grain texture */}
-            <div className="absolute inset-0 bg-film-grain opacity-[0.03]" />
+            <div className="absolute inset-0 bg-film-grain opacity-[0.035]" />
 
-            {/* Darkening Overlay for Content focus */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+            {/* Bokeh particles */}
+            {bokehParticles.map((p, i) => (
+                <div
+                    key={i}
+                    className="absolute rounded-full bg-white transition-opacity duration-1000"
+                    style={{
+                        left: `${p.x}%`,
+                        top: `${p.y}%`,
+                        width: `${p.size}px`,
+                        height: `${p.size}px`,
+                        opacity: 0,
+                        filter: `blur(${p.size * 0.8}px)`,
+                        animation: `bokeh-float ${p.duration}s ease-in-out ${p.begin} infinite`,
+                    }}
+                />
+            ))}
         </div>
     );
 }
