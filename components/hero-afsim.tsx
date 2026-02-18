@@ -21,7 +21,7 @@ export function HeroAfsim() {
             loop
             playsInline
             poster="https://images.unsplash.com/photo-1522071823991-b1ae5fe23506?auto=format&fit=crop&w=1920"
-            className="min-w-full min-h-full object-cover opacity-30"
+            className="min-w-full min-h-full object-cover opacity-40"
           >
             <source
               src="/hero-video.mp4"
@@ -29,8 +29,8 @@ export function HeroAfsim() {
             />
           </video>
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+          {/* Gradient Overlay - Lightened */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50"></div>
         </div>
 
         <div className="max-w-5xl z-10 animate-fade-in-up">
@@ -39,15 +39,15 @@ export function HeroAfsim() {
             Agence Web à Casablanca
           </span>
 
-          {/* Main Heading — UPDATED TEXT */}
+          {/* Main Heading — RESTORED SERIF FONT */}
           <h1 className="serif text-5xl md:text-7xl mb-4 leading-tight text-white animate-slide-in-left">
             AFSIM<span className="text-[#1a7bec] animate-glow">TECH</span>
-            <span className="block text-3xl md:text-4xl mt-2">
+            <span className="block text-3xl md:text-4xl mt-2 font-bold">
               Agence de création de sites web
             </span>
           </h1>
 
-          {/* Subtitle — UPDATED TEXT */}
+          {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-200 mb-8 font-light italic animate-slide-in-right">
             Transformez vos visiteurs en clients avec un site web <span className="font-bold text-white">élégant et performant</span>
           </p>

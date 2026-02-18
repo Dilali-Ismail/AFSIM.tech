@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -47,9 +46,9 @@ export default function Navbar() {
             <div className="mx-auto max-w-7xl px-4">
                 <div className="flex h-20 items-center justify-between">
 
-                    {/* Logo */}
+                    {/* Logo - restored with serif Font and no icon */}
                     <a href="#accueil" onClick={(e) => handleNavClick(e, '#accueil')} className="flex items-center">
-                        <span className="serif text-xl tracking-tight text-white">
+                        <span className="serif text-xl tracking-tight text-white font-black">
                             AFSIM<span className="text-[#1a7bec]">TECH</span>
                         </span>
                     </a>

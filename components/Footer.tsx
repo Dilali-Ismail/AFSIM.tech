@@ -12,7 +12,7 @@ export default function Footer() {
                     {/* Company Info */}
                     <div>
                         <div className="mb-4 flex items-center">
-                            <span className="serif text-xl tracking-tight">
+                            <span className="serif text-xl tracking-tight font-black">
                                 AFSIM<span className="text-[#1a7bec]">TECH</span>
                             </span>
                         </div>
