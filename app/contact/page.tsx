@@ -21,10 +21,10 @@ export default function Contact() {
             {/* Hero Section */}
             <section className="relative px-4 pb-20 pt-32">
                 <div className="mx-auto max-w-4xl text-center">
-                    <h1 className="mb-6 font-serif text-4xl font-bold text-white md:text-6xl">
+                    <h1 className="mb-6 font-serif text-3xl font-bold text-white md:text-5xl">
                         Get in Touch
                     </h1>
-                    <p className="text-lg text-white/70 md:text-xl">
+                    <p className="text-base text-white/70 md:text-lg">
                         Ready to take your business to the next level? Fill out the form below and we'll get back to you within 24 hours
                     </p>
                 </div>
@@ -36,7 +36,7 @@ export default function Contact() {
                     <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
                         {/* Contact Form */}
                         <div>
-                            <h2 className="mb-6 font-serif text-3xl font-bold text-white">
+                            <h2 className="mb-6 font-serif text-2xl font-bold text-white">
                                 Send Us a Message
                             </h2>
                             <ContactForm />
@@ -44,7 +44,7 @@ export default function Contact() {
 
                         {/* Contact Information */}
                         <div>
-                            <h2 className="mb-6 font-serif text-3xl font-bold text-white">
+                            <h2 className="mb-6 font-serif text-2xl font-bold text-white">
                                 Contact Information
                             </h2>
 
@@ -130,7 +130,7 @@ export default function Contact() {
                 <div className="mx-auto max-w-4xl">
                     <div className="mb-12 text-center">
                         <HelpCircle size={48} className="mx-auto mb-4 text-indigo-300" />
-                        <h2 className="mb-4 font-serif text-3xl font-bold text-white md:text-4xl">
+                        <h2 className="mb-4 font-serif text-2xl font-bold text-white md:text-3xl">
                             Frequently Asked Questions
                         </h2>
                     </div>

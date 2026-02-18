@@ -17,15 +17,15 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "AfsimTech - Modern Websites for Moroccan Businesses",
-  description: "We create mobile-ready, SEO-optimized sites with online booking for doctors, restaurants, riads, and more across Morocco.",
-  keywords: ["web development Morocco", "website creation", "SEO Morocco", "online booking", "digital solutions"],
-  authors: [{ name: "AfsimTech Team" }],
+  title: "AfsimTech - Agence de création de sites web au Maroc",
+  description: "Transformez vos visiteurs en clients avec un site web élégant et performant. Création de sites web, SEO, maintenance et applications web pour les PME marocaines.",
+  keywords: ["création site web Maroc", "agence web Casablanca", "SEO Maroc", "site vitrine", "e-commerce Maroc"],
+  authors: [{ name: "AfsimTech" }],
   openGraph: {
-    title: "AfsimTech - Modern Websites for Moroccan Businesses",
-    description: "We create mobile-ready, SEO-optimized sites with online booking for doctors, restaurants, riads, and more.",
+    title: "AfsimTech - Agence de création de sites web au Maroc",
+    description: "Transformez vos visiteurs en clients avec un site web élégant et performant.",
     type: "website",
-    locale: "en_US",
+    locale: "fr_MA",
   },
 };
 

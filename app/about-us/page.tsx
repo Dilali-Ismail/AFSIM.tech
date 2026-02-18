@@ -21,10 +21,10 @@ export default function AboutUs() {
             {/* Hero Section */}
             <section className="relative px-4 pb-20 pt-32">
                 <div className="mx-auto max-w-4xl text-center">
-                    <h1 className="mb-6 font-serif text-4xl font-bold text-white md:text-6xl">
+                    <h1 className="mb-6 font-serif text-3xl font-bold text-white md:text-5xl">
                         Your Trusted Digital Partners in Morocco
                     </h1>
-                    <p className="text-lg text-white/70 md:text-xl">
+                    <p className="text-base text-white/70 md:text-lg">
                         A passionate team of 5 experts committed to transforming local businesses through modern web solutions
                     </p>
                 </div>
@@ -33,12 +33,12 @@ export default function AboutUs() {
             {/* Mission Section */}
             <section className="relative px-4 pb-20">
                 <div className="mx-auto max-w-4xl">
-                    <h2 className="mb-8 text-center font-serif text-3xl font-bold text-white md:text-4xl">
+                    <h2 className="mb-8 text-center font-serif text-2xl font-bold text-white md:text-3xl">
                         Our Mission
                     </h2>
                     <Card className="border-white/10 bg-white/5 backdrop-blur-sm">
                         <CardContent className="p-8">
-                            <p className="text-lg leading-relaxed text-white/70">
+                            <p className="text-base leading-relaxed text-white/70">
                                 At AfsimTech, we're on a mission to <strong className="text-white">modernize outdated websites</strong> and transform them into
                                 <strong className="text-white"> responsive, SEO-optimized, booking-ready platforms</strong> that help Moroccan businesses thrive in the digital age.
                                 We believe every local business deserves a professional online presence that attracts customers and drives growth.
@@ -51,7 +51,7 @@ export default function AboutUs() {
             {/* Team Section */}
             <section className="relative px-4 pb-20">
                 <div className="mx-auto max-w-4xl">
-                    <h2 className="mb-12 text-center font-serif text-3xl font-bold text-white md:text-4xl">
+                    <h2 className="mb-12 text-center font-serif text-2xl font-bold text-white md:text-3xl">
                         Meet Our Team
                     </h2>
 
@@ -88,7 +88,7 @@ export default function AboutUs() {
             {/* Core Values Section */}
             <section className="relative px-4 pb-20">
                 <div className="mx-auto max-w-6xl">
-                    <h2 className="mb-12 text-center font-serif text-3xl font-bold text-white md:text-4xl">
+                    <h2 className="mb-12 text-center font-serif text-2xl font-bold text-white md:text-3xl">
                         Our Core Values
                     </h2>
 
@@ -116,7 +116,7 @@ export default function AboutUs() {
             {/* Vision Section */}
             <section className="relative px-4 pb-20">
                 <div className="mx-auto max-w-4xl text-center">
-                    <h2 className="mb-6 font-serif text-3xl font-bold text-white md:text-4xl">
+                    <h2 className="mb-6 font-serif text-2xl font-bold text-white md:text-3xl">
                         Our Vision
                     </h2>
                     <Card className="border-white/10 bg-white/5 backdrop-blur-sm">

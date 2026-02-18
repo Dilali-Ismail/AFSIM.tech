@@ -30,10 +30,10 @@ export default function Services() {
             {/* Hero Section */}
             <section className="relative px-4 pb-20 pt-32">
                 <div className="mx-auto max-w-4xl text-center">
-                    <h1 className="mb-6 font-serif text-4xl font-bold text-white md:text-6xl">
+                    <h1 className="mb-6 font-serif text-3xl font-bold text-white md:text-5xl">
                         Tailored Web Solutions for Your Business
                     </h1>
-                    <p className="text-lg text-white/70 md:text-xl">
+                    <p className="text-base text-white/70 md:text-lg">
                         From custom websites to booking systems - we've got everything your Moroccan business needs to succeed online
                     </p>
                 </div>
@@ -42,7 +42,7 @@ export default function Services() {
             {/* Services Grid */}
             <section className="relative px-4 pb-20">
                 <div className="mx-auto max-w-6xl">
-                    <h2 className="mb-12 text-center font-serif text-3xl font-bold text-white md:text-4xl">
+                    <h2 className="mb-12 text-center font-serif text-2xl font-bold text-white md:text-3xl">
                         What We Offer
                     </h2>
 
@@ -65,7 +65,7 @@ export default function Services() {
             {/* Problem-Solution Section */}
             <section className="relative px-4 pb-20">
                 <div className="mx-auto max-w-5xl">
-                    <h2 className="mb-12 text-center font-serif text-3xl font-bold text-white md:text-4xl">
+                    <h2 className="mb-12 text-center font-serif text-2xl font-bold text-white md:text-3xl">
                         From Outdated to Outstanding
                     </h2>
 
@@ -132,7 +132,7 @@ export default function Services() {
             {/* Target Clients Section */}
             <section className="relative px-4 pb-20">
                 <div className="mx-auto max-w-4xl">
-                    <h2 className="mb-12 text-center font-serif text-3xl font-bold text-white md:text-4xl">
+                    <h2 className="mb-12 text-center font-serif text-2xl font-bold text-white md:text-3xl">
                         Perfect For
                     </h2>
 
@@ -167,13 +167,13 @@ export default function Services() {
             {/* CTA Section */}
             <section className="relative px-4 pb-20">
                 <div className="mx-auto max-w-4xl text-center">
-                    <h2 className="mb-6 font-serif text-3xl font-bold text-white md:text-4xl">
+                    <h2 className="mb-6 font-serif text-2xl font-bold text-white md:text-3xl">
                         Ready to Get Started?
                     </h2>
-                    <p className="mb-4 text-xl text-white/70">
+                    <p className="mb-4 text-lg text-white/70">
                         Competitive pricing tailored to your needs
                     </p>
-                    <p className="mb-8 text-2xl font-bold text-white">
+                    <p className="mb-8 text-xl font-bold text-white">
                         Starting from competitive rates - Book a Free Consultation
                     </p>
                     <Button asChild className="rounded-full bg-white text-[#1a0a3e] hover:bg-white/90" size="lg">

@@ -11,29 +11,8 @@ export function HeroAfsim() {
 
   return (
     <>
-      {/* Header */}
-      <header className="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-[#1a2946]/40 backdrop-blur-md border-b border-white/10">
-        <div className="text-2xl font-black tracking-tighter text-white">
-          AFSIM<span className="text-[#1a7bec]">TECH</span>
-        </div>
-
-        <nav className="hidden lg:flex space-x-8 text-sm font-medium uppercase tracking-wider">
-          <a href="#" className="hover:text-[#1a7bec] transition-colors duration-300">Accueil</a>
-          <a href="#" className="hover:text-[#1a7bec] transition-colors duration-300">Nos Réalisations</a>
-          <a href="#" className="hover:text-[#1a7bec] transition-colors duration-300">Expertise</a>
-          <a href="#" className="hover:text-[#1a7bec] transition-colors duration-300">Contact</a>
-        </nav>
-
-        <button
-          onClick={toggleModal}
-          className="bg-[#1a7bec] hover:bg-[#1c77ea] text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase transition-all duration-300 shadow-[0_0_20px_rgba(26,123,236,0.4)] hover:shadow-[0_0_30px_rgba(26,123,236,0.6)] hover:scale-105"
-        >
-          Audit Gratuit
-        </button>
-      </header>
-
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+      <section id="accueil" className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         {/* Video Background */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <video
@@ -60,14 +39,17 @@ export function HeroAfsim() {
             Agence Web à Casablanca
           </span>
 
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-white animate-slide-in-left">
-            Créez votre site web professionnel avec <span className="text-[#1a7bec] animate-glow">AfsimTech</span>
+          {/* Main Heading — UPDATED TEXT */}
+          <h1 className="serif text-5xl md:text-7xl mb-4 leading-tight text-white animate-slide-in-left">
+            AFSIM<span className="text-[#1a7bec] animate-glow">TECH</span>
+            <span className="block text-3xl md:text-4xl mt-2">
+              Agence de création de sites web
+            </span>
           </h1>
 
-          {/* Subtitle */}
+          {/* Subtitle — UPDATED TEXT */}
           <p className="text-xl md:text-2xl text-gray-200 mb-8 font-light italic animate-slide-in-right">
-            Sites vitrines et e-commerce pour PME marocaines : <span className="font-bold text-white">+30% de leads en 3 mois</span>
+            Transformez vos visiteurs en clients avec un site web <span className="font-bold text-white">élégant et performant</span>
           </p>
 
           {/* Value Proposition Card */}
@@ -83,18 +65,22 @@ export function HeroAfsim() {
           </div>
 
           {/* CTA Button */}
-          <button
-            onClick={toggleModal}
-            className="bg-white text-[#1a2946] px-10 py-5 rounded-xl text-lg font-black hover:bg-[#1a7bec] hover:text-white transition-all transform hover:scale-105 duration-300 shadow-2xl animate-bounce-slow"
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="inline-flex items-center bg-white text-[#1a2946] px-10 py-5 rounded-xl text-lg font-black hover:bg-[#1a7bec] hover:text-white transition-all transform hover:scale-105 duration-300 shadow-2xl animate-bounce-slow"
           >
-            DEMANDER UN AUDIT GRATUIT
+            DEMANDER AUDIT GRATUIT
             <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </button>
+          </a>
         </div>
 
-        {/* Stats - Simple Text with Bullet Points */}
+        {/* Stats */}
         <div className="absolute bottom-8 w-full max-w-3xl px-6 z-10 animate-fade-in-up-delay">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-gray-300">
             <span className="flex items-center gap-2">
@@ -112,19 +98,6 @@ export function HeroAfsim() {
           </div>
         </div>
       </section>
-
-      {/* Sticky CTA Button */}
-      <div className="fixed bottom-6 right-6 z-[60] animate-bounce-slow">
-        <button
-          onClick={toggleModal}
-          className="bg-[#1a7bec] hover:bg-[#1c77ea] text-white w-16 h-16 md:w-auto md:px-6 rounded-full shadow-2xl flex items-center justify-center font-bold transition-all shadow-[0_0_20px_rgba(26,123,236,0.4)] hover:shadow-[0_0_40px_rgba(26,123,236,0.6)] hover:scale-110 duration-300"
-        >
-          <svg className="w-6 h-6 md:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-          </svg>
-          <span className="hidden md:inline">AUDIT GRATUIT</span>
-        </button>
-      </div>
 
       {/* Modal */}
       {modalOpen && (
@@ -174,138 +147,6 @@ export function HeroAfsim() {
           </div>
         </div>
       )}
-
-      {/* Custom Animations Styles */}
-      <style jsx>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slide-in-left {
-          from {
-            opacity: 0;
-            transform: translateX(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes slide-in-right {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes scale-in {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        @keyframes pulse-slow {
-          0%, 100% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.7;
-          }
-        }
-
-        @keyframes pulse-glow {
-          0%, 100% {
-            box-shadow: 0 0 20px rgba(26, 123, 236, 0.5);
-          }
-          50% {
-            box-shadow: 0 0 30px rgba(26, 123, 236, 0.8);
-          }
-        }
-
-        @keyframes glow {
-          0%, 100% {
-            text-shadow: 0 0 20px rgba(26, 123, 236, 0.5);
-          }
-          50% {
-            text-shadow: 0 0 30px rgba(26, 123, 236, 0.8);
-          }
-        }
-
-        @keyframes bounce-slow {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out;
-        }
-
-        .animate-fade-in-up-delay {
-          animation: fade-in-up 1s ease-out 0.3s backwards;
-        }
-
-        .animate-slide-in-left {
-          animation: slide-in-left 0.8s ease-out;
-        }
-
-        .animate-slide-in-right {
-          animation: slide-in-right 0.8s ease-out 0.2s backwards;
-        }
-
-        .animate-fade-in {
-          animation: fade-in 0.3s ease-out;
-        }
-
-        .animate-scale-in {
-          animation: scale-in 0.3s ease-out;
-        }
-
-        .animate-pulse-slow {
-          animation: pulse-slow 3s ease-in-out infinite;
-        }
-
-        .animate-pulse-glow {
-          animation: pulse-glow 2s ease-in-out infinite;
-        }
-
-        .animate-glow {
-          animation: glow 2s ease-in-out infinite;
-        }
-
-        .animate-bounce-slow {
-          animation: bounce-slow 3s ease-in-out infinite;
-        }
-      `}</style>
     </>
   );
 }

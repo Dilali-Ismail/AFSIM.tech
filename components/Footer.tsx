@@ -6,99 +6,93 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="relative border-t border-white/10 bg-[#1a0a3e]/50 text-white backdrop-blur-lg">
-            <div className="mx-auto max-w-7xl px-4 py-12">
+        <footer className="relative border-t border-white/10 bg-[#0a1628]/80 text-white backdrop-blur-lg">
+            <div className="mx-auto max-w-7xl px-6 py-12">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {/* Company Info */}
                     <div>
-                        <div className="mb-4 flex items-center space-x-2">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500">
-                                <span className="font-bold text-white">A</span>
-                            </div>
-                            <span className="font-serif text-2xl font-bold">AfsimTech</span>
+                        <div className="mb-4 flex items-center">
+                            <span className="serif text-xl tracking-tight">
+                                AFSIM<span className="text-[#1a7bec]">TECH</span>
+                            </span>
                         </div>
-                        <p className="mb-4 text-white/60">
-                            Your trusted digital partner for modern websites and digital solutions in Morocco.
+                        <p className="mb-4 text-sm text-white/50 leading-relaxed">
+                            Votre partenaire digital de confiance pour des sites web modernes et performants au Maroc.
                         </p>
-                        <div className="flex space-x-4">
-                            <a href="#" className="text-white/60 transition-colors hover:text-white" aria-label="Facebook">
-                                <Facebook size={24} />
-                            </a>
-                            <a href="#" className="text-white/60 transition-colors hover:text-white" aria-label="Instagram">
-                                <Instagram size={24} />
-                            </a>
-                            <a href="#" className="text-white/60 transition-colors hover:text-white" aria-label="LinkedIn">
-                                <Linkedin size={24} />
-                            </a>
+                        <div className="flex gap-3">
+                            {[
+                                { icon: Facebook, label: 'Facebook' },
+                                { icon: Instagram, label: 'Instagram' },
+                                { icon: Linkedin, label: 'LinkedIn' },
+                            ].map(({ icon: Icon, label }) => (
+                                <a key={label} href="#" aria-label={label}
+                                    className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#1a7bec] hover:border-[#1a7bec]/30 hover:bg-[#1a7bec]/10 transition-all duration-200">
+                                    <Icon size={15} />
+                                </a>
+                            ))}
                         </div>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="mb-4 text-xl font-bold">Quick Links</h3>
+                        <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-white/80">Navigation</h3>
                         <ul className="space-y-2">
-                            <li>
-                                <Link href="/" className="text-white/60 transition-colors hover:text-white">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/about-us" className="text-white/60 transition-colors hover:text-white">
-                                    About Us
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/services" className="text-white/60 transition-colors hover:text-white">
-                                    Services
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/contact" className="text-white/60 transition-colors hover:text-white">
-                                    Contact
-                                </Link>
-                            </li>
+                            {[
+                                { href: '#accueil', label: 'Accueil' },
+                                { href: '#services', label: 'Services' },
+                                { href: '#realisations', label: 'Réalisations' },
+                                { href: '#avis', label: 'Avis clients' },
+                                { href: '#contact', label: 'Contact' },
+                            ].map(({ href, label }) => (
+                                <li key={href}>
+                                    <a href={href} className="text-sm text-white/50 hover:text-white transition-colors">
+                                        {label}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
                     {/* Services */}
                     <div>
-                        <h3 className="mb-4 text-xl font-bold">Our Services</h3>
-                        <ul className="space-y-2 text-white/60">
-                            <li>Website Creation</li>
-                            <li>Online Booking Systems</li>
-                            <li>SEO Optimization</li>
-                            <li>Mobile Development</li>
-                            <li>Maintenance & Support</li>
+                        <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-white/80">Nos Services</h3>
+                        <ul className="space-y-2 text-sm text-white/50">
+                            <li>Création de sites web</li>
+                            <li>Référencement SEO</li>
+                            <li>Sécurité & Maintenance</li>
+                            <li>Applications web</li>
+                            <li>Refonte de sites</li>
                         </ul>
                     </div>
 
-                    {/* Contact Info */}
+                    {/* Contact */}
                     <div>
-                        <h3 className="mb-4 text-xl font-bold">Contact Us</h3>
+                        <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-white/80">Contact</h3>
                         <ul className="space-y-3">
-                            <li className="flex items-start space-x-3">
-                                <Mail size={20} className="mt-1 flex-shrink-0 text-indigo-300" />
-                                <a href="mailto:contact@afsimtech.ma" className="text-white/60 transition-colors hover:text-white">
-                                    contact@afsimtech.ma
-                                </a>
-                            </li>
-                            <li className="flex items-start space-x-3">
-                                <Phone size={20} className="mt-1 flex-shrink-0 text-indigo-300" />
-                                <a href="tel:+212600000000" className="text-white/60 transition-colors hover:text-white">
-                                    +212 6 00 00 00 00
-                                </a>
-                            </li>
-                            <li className="flex items-start space-x-3">
-                                <MapPin size={20} className="mt-1 flex-shrink-0 text-indigo-300" />
-                                <span className="text-white/60">Casablanca, Morocco</span>
-                            </li>
+                            {[
+                                { icon: Mail, value: 'contact@afsimtech.ma', href: 'mailto:contact@afsimtech.ma' },
+                                { icon: Phone, value: '+212 6 00 00 00 00', href: 'tel:+212600000000' },
+                                { icon: MapPin, value: 'Casablanca, Maroc', href: '#' },
+                            ].map(({ icon: Icon, value, href }) => (
+                                <li key={value}>
+                                    <a href={href} className="flex items-center gap-2.5 text-sm text-white/50 hover:text-white transition-colors group">
+                                        <Icon size={14} className="text-[#1a7bec] flex-shrink-0" />
+                                        {value}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-8 border-t border-white/10 pt-8 text-center text-white/60">
-                    <p>&copy; {currentYear} AfsimTech. All rights reserved. Built with ❤️ in Morocco.</p>
+                <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <p className="text-xs text-white/30">
+                        © {currentYear} AfsimTech. Tous droits réservés. Fait avec ❤️ au Maroc.
+                    </p>
+                    <p className="text-xs text-white/20">
+                        Mentions légales · Politique de confidentialité
+                    </p>
                 </div>
             </div>
         </footer>

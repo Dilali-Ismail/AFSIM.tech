@@ -1,50 +1,65 @@
+'use client';
+
 import React from 'react';
 
-export function RadialBackground() {
+// Bokeh particle positions (deterministic, no random)
+const bokehParticles = [
+    { x: 15, y: 20, size: 3, delay: 0, duration: 8 },
+    { x: 75, y: 10, size: 2, delay: 1.5, duration: 10 },
+    { x: 40, y: 60, size: 4, delay: 3, duration: 12 },
+    { x: 85, y: 45, size: 2, delay: 0.5, duration: 9 },
+    { x: 25, y: 80, size: 3, delay: 2, duration: 11 },
+    { x: 60, y: 25, size: 2, delay: 4, duration: 7 },
+    { x: 90, y: 70, size: 3, delay: 1, duration: 13 },
+    { x: 10, y: 55, size: 2, delay: 3.5, duration: 8 },
+    { x: 50, y: 90, size: 4, delay: 2.5, duration: 10 },
+    { x: 70, y: 80, size: 2, delay: 0.8, duration: 9 },
+    { x: 30, y: 35, size: 3, delay: 4.5, duration: 11 },
+    { x: 55, y: 50, size: 2, delay: 1.2, duration: 8 },
+];
+
+export function AmbientBackground() {
     return (
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-            {/* Base gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a3e] via-[#2d1166] to-[#1a0a3e]" />
+        <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+            {/* Base: very dark navy */}
+            <div className="absolute inset-0" style={{ background: 'rgb(10, 15, 30)' }} />
 
-            {/* Radial glow effect */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_60%,rgba(99,60,255,0.25),transparent)]" />
+            {/* Cinematic radial glow — brand blue center, breathing */}
+            <div
+                className="absolute inset-0 bg-glow-breathe"
+                style={{
+                    background: `radial-gradient(ellipse 70% 60% at 50% 50%, rgba(26, 123, 236, 0.45) 0%, rgba(26, 123, 236, 0.15) 35%, rgba(10, 15, 30, 0) 70%)`,
+                }}
+            />
 
-            {/* Concentric circles - Mobile */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden">
-                <div className="absolute h-[600px] w-[600px] rounded-full border border-violet-500/[0.07] shadow-[0_0_80px_rgba(120,80,255,0.05)]" />
-                <div className="absolute h-[900px] w-[900px] -translate-x-[150px] -translate-y-[150px] rounded-full border border-violet-500/[0.05] shadow-[0_0_100px_rgba(120,80,255,0.04)]" />
-                <div className="absolute h-[1200px] w-[1200px] -translate-x-[300px] -translate-y-[300px] rounded-full border border-violet-500/[0.03] shadow-[0_0_120px_rgba(120,80,255,0.03)]" />
-                <div className="absolute h-[1500px] w-[1500px] -translate-x-[450px] -translate-y-[450px] rounded-full border border-violet-500/[0.02]" />
-            </div>
+            {/* Secondary depth glow — slightly offset for cinematic depth */}
+            <div
+                className="absolute inset-0"
+                style={{
+                    background: `radial-gradient(ellipse 40% 40% at 30% 70%, rgba(26, 80, 200, 0.18) 0%, transparent 60%),
+                                 radial-gradient(ellipse 30% 30% at 75% 20%, rgba(26, 123, 236, 0.12) 0%, transparent 60%)`,
+                }}
+            />
 
-            {/* Concentric circles - Tablet */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:block lg:hidden">
-                <div className="absolute h-[800px] w-[800px] rounded-full border border-violet-500/[0.07] shadow-[0_0_80px_rgba(120,80,255,0.05)]" />
-                <div className="absolute h-[1200px] w-[1200px] -translate-x-[200px] -translate-y-[200px] rounded-full border border-violet-500/[0.05] shadow-[0_0_100px_rgba(120,80,255,0.04)]" />
-                <div className="absolute h-[1600px] w-[1600px] -translate-x-[400px] -translate-y-[400px] rounded-full border border-violet-500/[0.03] shadow-[0_0_120px_rgba(120,80,255,0.03)]" />
-                <div className="absolute h-[2000px] w-[2000px] -translate-x-[600px] -translate-y-[600px] rounded-full border border-violet-500/[0.02]" />
-            </div>
+            {/* Film grain texture */}
+            <div className="absolute inset-0 bg-film-grain opacity-[0.035]" />
 
-            {/* Concentric circles - Desktop */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:block">
-                <div className="absolute h-[1000px] w-[1000px] rounded-full border border-violet-500/[0.07] shadow-[0_0_80px_rgba(120,80,255,0.05)]" />
-                <div className="absolute h-[1500px] w-[1500px] -translate-x-[250px] -translate-y-[250px] rounded-full border border-violet-500/[0.05] shadow-[0_0_100px_rgba(120,80,255,0.04)]" />
-                <div className="absolute h-[2000px] w-[2000px] -translate-x-[500px] -translate-y-[500px] rounded-full border border-violet-500/[0.03] shadow-[0_0_120px_rgba(120,80,255,0.03)]" />
-                <div className="absolute h-[2500px] w-[2500px] -translate-x-[750px] -translate-y-[750px] rounded-full border border-violet-500/[0.02]" />
-            </div>
-
-            {/* Inner glow */}
-            <div className="absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/[0.07] blur-[60px]" />
-
-            {/* Side glows */}
-            <div className="absolute -left-20 top-1/4 h-[400px] w-[400px] rounded-full bg-violet-500/[0.05] blur-[100px]" />
-            <div className="absolute -right-20 top-3/4 h-[400px] w-[400px] rounded-full bg-indigo-500/[0.05] blur-[100px]" />
-
-            {/* Sparkle accents */}
-            <div className="absolute left-1/4 top-1/3 h-1 w-1 rounded-full bg-white/20" />
-            <div className="absolute left-3/4 top-2/3 h-1 w-1 rounded-full bg-violet-300/40" />
-            <div className="absolute left-1/2 top-1/4 h-0.5 w-0.5 rounded-full bg-white/30" />
-            <div className="absolute left-2/3 top-1/2 h-0.5 w-0.5 rounded-full bg-violet-200/25" />
+            {/* Bokeh particles */}
+            {bokehParticles.map((p, i) => (
+                <div
+                    key={i}
+                    className="absolute rounded-full bg-white"
+                    style={{
+                        left: `${p.x}%`,
+                        top: `${p.y}%`,
+                        width: `${p.size}px`,
+                        height: `${p.size}px`,
+                        opacity: 0,
+                        filter: `blur(${p.size * 0.8}px)`,
+                        animation: `bokeh-float ${p.duration}s ease-in-out ${p.delay}s infinite`,
+                    }}
+                />
+            ))}
         </div>
     );
 }
