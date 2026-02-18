@@ -18,7 +18,7 @@ const bokehParticles = [
     { x: 55, y: 50, size: 2, delay: 1.2, duration: 8 },
 ];
 
-export function AmbientBackground() {
+export function RadialBackground() {
     return (
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
             {/* Base: very dark navy */}
